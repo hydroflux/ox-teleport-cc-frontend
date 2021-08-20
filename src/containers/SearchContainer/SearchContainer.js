@@ -1,32 +1,27 @@
 import { Component } from 'react'
 
 import SearchBar from 'material-ui-search-bar'
-import { parseHTTPResponse } from '../../helpers/utilities'
-
-let searchURL = 'https://api.teleport.org/api/cities/'
+import { parseHTTPResponse, searchCity } from '../../helpers/utilities'
 
 export default class SearchContainer extends Component {
 
     state = {
-        searchTerm: ''
+        searchTerm: '',
+        results: []
     }
 
     handleChange = searchTerm => this.setState({ searchTerm })
 
     handleSearch = () => {
         const { searchTerm } = this.state
-
-        searchURL = `${searchURL}?search=${searchTerm}`
-
-        fetch( searchURL, {
-            method: "GET",
-            headers: {
-                'Content-Type': 'application/json'
-            },
-        }).then( parseHTTPResponse )
-        .then(console.log)
-
+        // const { history } = this.props
+        searchCity(searchTerm)
+        .then( parseHTTPResponse )
+        .then( response => {
+            this.SetState({
+                results: response._embedded["city:search-results"]})})
     }
+
     render() {
         return (
             <SearchBar 

@@ -3,6 +3,7 @@ import { parseHTTPResponse } from './helpers/utilities';
 
 import CityList from './containers/CityList/CityList'
 import Header from './containers/Header/Header';
+import { Route } from 'react-router-dom';
 
 class App extends Component {
 
@@ -29,8 +30,12 @@ class App extends Component {
 
     return (
       <div className="App">
-        <Header />
-        <CityList cities={cities} />
+        <Route path="/" render={ routerProps => {
+          return <Header {...routerProps} />
+        }} />
+        <Route exact path="" render={ routerProps => {
+          return <CityList cities={cities} />
+        }} />
       </div>
     );
   }
