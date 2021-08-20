@@ -1,0 +1,1 @@
+export const parseHTTPResponse = response => response.json()
