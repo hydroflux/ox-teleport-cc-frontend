@@ -17,6 +17,7 @@ export default class SearchContainer extends Component {
         // const { history } = this.props
         searchCity(searchTerm)
         .then( parseHTTPResponse )
+        .then( console.log )
         .then( response => {
             this.SetState({
                 results: response._embedded["city:search-results"]})})

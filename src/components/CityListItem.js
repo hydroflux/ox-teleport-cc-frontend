@@ -1,5 +1,3 @@
-import { parseHTTPResponse, searchCity } from "../helpers/utilities"
-
 export default function CityListItem({ city }) {
 
     const link = city["_links"]["city:item"]
@@ -7,7 +5,7 @@ export default function CityListItem({ city }) {
     console.log(link)
 
     const searchCityExact = () => {
-        
+        console.log(link)
     }
 
     return (
