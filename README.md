@@ -1,4 +1,12 @@
-# Getting Started with Create React App
+# CHALLENGE
+Our client wants a website that allows them to learn more about major U.S. cities. Specifically, they wish to be able to submit the name of a city and learn its latitude and longitude, as well as quality of life scores for the area, where available. To save costs, we have decided to use Teleport’s free public API (https://developers.teleport.org/api/getting_started/) as our data source. 
+
+User Story #1 => As a user, I can view major us cities located at the teleport api endpoint
+User Story #2 => As a user, I can submit the name of a city and learn its latitude & longitude, as well as other metrics
+User Story #3 => As a user, I can view city metrics on an individual page
+
+
+<!-- # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
@@ -67,4 +75,4 @@ This section has moved here: [https://facebook.github.io/create-react-app/docs/d
 
 ### `npm run build` fails to minify
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify) -->
