@@ -33,7 +33,7 @@ class App extends Component {
         <Route path="/" render={ routerProps => {
           return <Header {...routerProps} />
         }} />
-        <Route exact path="" render={ routerProps => {
+        <Route exact path="/" render={ routerProps => {
           return <CityList cities={cities} />
         }} />
       </div>
