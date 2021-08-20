@@ -1,7 +1,7 @@
 import { Component } from 'react'
 import { parseHTTPResponse } from './helpers/utilities';
 
-import SampleCities from './components/SampleCities'
+import CityList from './containers/CityList'
 
 class App extends Component {
 
@@ -9,7 +9,9 @@ class App extends Component {
     cities: []
   }
 
-  componentDidMount(){
+  componentWillMount(){ this.getSampleCities() }
+
+  getSampleCities = () => {
     fetch('https://api.teleport.org/api/cities', {
       headers: {
         'Content-Type': 'application/json'
@@ -18,13 +20,15 @@ class App extends Component {
       .then( ({_embedded}) => {
         this.setState({
           cities: _embedded["city:search-results"]
-        })})
+      })})
   }
 
   render(){
+    const { cities } = this.state
+
     return (
       <div className="App">
-        <SampleCities cities={this.state.cities} />
+        <CityList cities={cities} />
       </div>
     );
   }
