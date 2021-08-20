@@ -1,7 +1,7 @@
 import { Component } from 'react'
 import { parseHTTPResponse } from './helpers/utilities';
 
-import CityList from './containers/CityList'
+import CityList from './containers/CityList/CityList'
 import Header from './containers/Header/Header';
 
 class App extends Component {
