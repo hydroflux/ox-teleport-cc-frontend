@@ -2,6 +2,7 @@ import { Component } from 'react'
 import { parseHTTPResponse } from './helpers/utilities';
 
 import CityList from './containers/CityList'
+import Header from './containers/Header/Header';
 
 class App extends Component {
 
@@ -28,6 +29,7 @@ class App extends Component {
 
     return (
       <div className="App">
+        <Header />
         <CityList cities={cities} />
       </div>
     );
