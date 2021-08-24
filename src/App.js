@@ -4,6 +4,7 @@ import { parseHTTPResponse } from './helpers/utilities';
 import CityList from './containers/CityList/CityList'
 import Header from './containers/Header/Header';
 import { Route } from 'react-router-dom';
+import CityContainer from './containers/CityContainer/CityContainer';
 
 class App extends Component {
 
@@ -34,7 +35,10 @@ class App extends Component {
           return <Header {...routerProps} />
         }} />
         <Route exact path="/" render={ routerProps => {
-          return <CityList cities={cities} />
+          return <CityList cities={cities} {...routerProps} />
+        }} />
+        <Route exact path="/search" render={ routerProps => {
+          return <CityContainer {...routerProps} />
         }} />
       </div>
     );

@@ -1,11 +1,19 @@
-export default function CityListItem({ city }) {
+import { parseHTTPResponse } from "../helpers/utilities"
 
-    const link = city["_links"]["city:item"]
+export default function CityListItem({ city, history }) {
+
+    const link = city["_links"]["city:item"]["href"]
     const name = city.matching_full_name
-    console.log(link)
 
     const searchCityExact = () => {
         console.log(link)
+        fetch( link )
+            .then( parseHTTPResponse )
+            .then( city_details => {
+                history.push(
+                    `/search?city=${name}`, { name, city_details }
+                )
+            })
     }
 
     return (
