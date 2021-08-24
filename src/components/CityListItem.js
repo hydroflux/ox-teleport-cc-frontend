@@ -11,7 +11,7 @@ export default function CityListItem({ city, history }) {
             .then( parseHTTPResponse )
             .then( city_details => {
                 history.push(
-                    `/search?city=${name}`, { name, city_details }
+                    `/search?city=${name}`, { city_details }
                 )
             })
     }

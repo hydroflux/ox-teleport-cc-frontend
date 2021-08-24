@@ -12,7 +12,7 @@ class App extends Component {
     cities: []
   }
 
-  componentWillMount(){ this.getSampleCities() }
+  componentDidMount(){ this.getSampleCities() }
 
   getSampleCities = () => {
     fetch('https://api.teleport.org/api/cities', {

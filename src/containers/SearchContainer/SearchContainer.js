@@ -16,12 +16,12 @@ export default class SearchContainer extends Component {
         const { searchTerm } = this.state
         // const { history } = this.props
         searchCity(searchTerm)
-        .then( parseHTTPResponse )
-        .then( console.log )
-        .then( response => {
-            this.SetState({
-                results: response._embedded["city:search-results"]})})
-    }
+            .then( parseHTTPResponse )
+            .then( console.log )
+            .then( response => {
+                this.SetState({
+                    results: response._embedded["city:search-results"]})})
+        }
 
     render() {
         return (
