@@ -38,6 +38,9 @@ class App extends Component {
           return <CityList cities={cities} {...routerProps} />
         }} />
         <Route exact path="/search" render={ routerProps => {
+          return <CityList {...routerProps} />
+        }} />
+        <Route exact path="/show" render={ routerProps => {
           return <CityContainer {...routerProps} />
         }} />
       </div>

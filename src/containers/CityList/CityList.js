@@ -15,7 +15,7 @@ export default function CityList({ cities, history }) {
     
     return (
         <section>
-            <h1>Sample Cities</h1>
+            <h1>Please Select A City</h1>
             { displayCities() }
         </section>
     )

@@ -4,7 +4,7 @@ import SearchContainer from '../SearchContainer/SearchContainer'
 
 import './Header.css'
 
-export default function Header() {
+export default function Header({...routerProps}) {
     return (
         <header>
             <Link to="/">
@@ -14,7 +14,7 @@ export default function Header() {
                     alt="logo"
                 />
             </Link>
-            <SearchContainer />
+            <SearchContainer {...routerProps}/>
         </header>
     )
 }

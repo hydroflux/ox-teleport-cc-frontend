@@ -1,27 +1,28 @@
 import { Component } from 'react'
 
 import SearchBar from 'material-ui-search-bar'
-import { parseHTTPResponse, searchCity } from '../../helpers/utilities'
+import { searchCity } from '../../helpers/utilities'
 
 export default class SearchContainer extends Component {
 
     state = {
         searchTerm: '',
-        results: []
+        city_results: []
     }
 
     handleChange = searchTerm => this.setState({ searchTerm })
 
     handleSearch = () => {
         const { searchTerm } = this.state
-        // const { history } = this.props
+        const { history } = this.props
+
         searchCity(searchTerm)
-            .then( parseHTTPResponse )
-            .then( console.log )
             .then( response => {
-                this.SetState({
-                    results: response._embedded["city:search-results"]})})
-        }
+                const cities = response._embedded["city:search-results"]
+                console.log(cities)
+                history.push(`/search?q=${searchTerm}`, { searchTerm, cities })
+        })
+    }
 
     render() {
         return (
