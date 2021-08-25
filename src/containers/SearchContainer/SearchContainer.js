@@ -32,7 +32,6 @@ export default class SearchContainer extends Component {
                 name="searchTerm"
                 value={ this.state.searchTerm }
                 placeholder="Search by city name"
-                color="inherit"
                 // cancelOnEscape={ true }
                 onCancelSearch={ this.handleSearch }
                 onRequestSearch={ this.handleSearch }

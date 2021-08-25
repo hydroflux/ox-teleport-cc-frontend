@@ -12,3 +12,12 @@ export const searchCity = (searchTerm) => {
     })
         .then( parseHTTPResponse )
 }
+
+export const getSampleCities = () => {
+    return fetch('https://api.teleport.org/api/cities', {
+        headers: {
+          'Content-Type': 'application/json'
+        }})
+            .then( parseHTTPResponse )
+            .then( ({_embedded}) => _embedded["city:search-results"] )
+}

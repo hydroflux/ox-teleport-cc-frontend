@@ -1,5 +1,5 @@
 import { Component } from 'react'
-import { parseHTTPResponse } from './helpers/utilities';
+import { getSampleCities } from './helpers/utilities';
 
 import CityList from './containers/CityList/CityList'
 import Header from './containers/Header/Header';
@@ -12,23 +12,13 @@ class App extends Component {
     cities: []
   }
 
-  componentDidMount(){ this.getSampleCities() }
-
-  getSampleCities = () => {
-    fetch('https://api.teleport.org/api/cities', {
-      headers: {
-        'Content-Type': 'application/json'
-      }})
-      .then( parseHTTPResponse )
-      .then( ({_embedded}) => {
-        this.setState({
-          cities: _embedded["city:search-results"]
-      })})
+  componentDidMount(){ 
+    console.log("here")
+    getSampleCities()
+      .then( this.updateCities )
   }
 
-  updateCities = cities => {
-    this.setState({ cities })
-  }
+  updateCities = cities => this.setState({ cities })
 
   render(){
     const { cities } = this.state
