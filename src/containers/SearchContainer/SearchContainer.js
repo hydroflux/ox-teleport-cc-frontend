@@ -1,7 +1,8 @@
 import { Component } from 'react'
-
 import SearchBar from 'material-ui-search-bar'
+
 import { searchCity } from '../../helpers/utilities'
+import './SearchContainer.css'
 
 export default class SearchContainer extends Component {
 
@@ -31,6 +32,7 @@ export default class SearchContainer extends Component {
                 name="searchTerm"
                 value={ this.state.searchTerm }
                 placeholder="Search by city name"
+                color="inherit"
                 // cancelOnEscape={ true }
                 onCancelSearch={ this.handleSearch }
                 onRequestSearch={ this.handleSearch }
