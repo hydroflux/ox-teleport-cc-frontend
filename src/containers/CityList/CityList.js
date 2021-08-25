@@ -1,4 +1,7 @@
-import CityListItem from '../../components/CityListItem';
+import { List } from '@material-ui/core';
+import CityListItem from '../../components/CityListItem/CityListItem';
+
+import './CityList.css'
 
 export default function CityList({ cities, history }) {
 
@@ -14,9 +17,10 @@ export default function CityList({ cities, history }) {
     }
     
     return (
-        <section>
-            <h1>Please Select A City</h1>
-            { displayCities() }
-        </section>
+        <>
+            <List className="city-list" component="nav">
+                { displayCities() }
+            </List>
+        </>
     )
 }

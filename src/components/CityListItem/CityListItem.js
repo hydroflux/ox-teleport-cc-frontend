@@ -1,11 +1,14 @@
-import { parseHTTPResponse } from "../helpers/utilities"
+import { ListItem } from "@material-ui/core"
+import { parseHTTPResponse } from "../../helpers/utilities"
+
+import './CityListItem.css'
 
 export default function CityListItem({ city, history }) {
 
     const link = city["_links"]["city:item"]["href"]
     const name = city.matching_full_name
 
-    const searchCityExact = () => {
+    const showCityDetails = () => {
         fetch( link )
             .then( parseHTTPResponse )
             .then( city_details => {
@@ -16,8 +19,12 @@ export default function CityListItem({ city, history }) {
     }
 
     return (
-            <div className="city-list-item">
-                <h3 onClick={searchCityExact}>{name}</h3>
-            </div>
+            <ListItem
+                className="city-list-item"
+                button
+                onClick={showCityDetails}
+            >
+                {name}
+            </ListItem>
         )
 }
