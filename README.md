@@ -1,5 +1,6 @@
-<!-- CHALLENGE -->
-Our client wants a website that allows them to learn more about major U.S. cities. Specifically, they wish to be able to submit the name of a city and learn its latitude and longitude, as well as quality of life scores for the area, where available. To save costs, we have decided to use Teleport’s free public API (https://developers.teleport.org/api/getting_started/) as our data source. 
+# CHALLENGE
+
+Our client wants a website that allows them to learn more about major U.S. cities. Specifically, they wish to be able to submit the name of a city and learn its latitude and longitude, as well as quality of life scores for the area, where available. To save costs, we have decided to use Teleport’s free public API (<https://developers.teleport.org/api/getting_started/>) as our data source.
 
 <!-- August 24th Backlog Updates -->
 [] Sample list isn't the best way to have a splash / home page--also wasted a lot of time during the CC--decide on a way to update
