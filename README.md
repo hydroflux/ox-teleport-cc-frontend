@@ -5,6 +5,13 @@ User Story #1 => As a user, I can view major us cities located at the teleport a
 User Story #2 => As a user, I can submit the name of a city and learn its latitude & longitude, as well as other metrics
 User Story #3 => As a user, I can view city metrics on an individual page
 
+[] Need to add styling--keep using material-ui
+[] Need to update the show route in order to display different metrics on a 'search' compared to the 'sample list'
+[] Sample list isn't the best way to have a splash / home page--also wasted a lot of time during the CC--decide on a way to update
+[] Categories list should exist in their own table including the colors
+[] Look into the widgets available on the api again, possible to show on the CityContainer page
+[] If continuing to use material-ui, update the CityContainer page to use the 'Paper' component in order to split the page into left / right (right side for widget)
+[] Need to add conditionals for if the urban area details don't exist
 
 <!-- # Getting Started with Create React App
 
