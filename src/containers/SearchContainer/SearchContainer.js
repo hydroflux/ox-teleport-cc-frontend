@@ -19,7 +19,7 @@ export default class SearchContainer extends Component {
         searchCity(searchTerm)
             .then( response => {
                 const cities = response._embedded["city:search-results"]
-                console.log(cities)
+                this.props.updateCities( cities )
                 history.push(`/search?q=${searchTerm}`, { searchTerm, cities })
         })
     }

@@ -26,19 +26,23 @@ class App extends Component {
       })})
   }
 
+  updateCities = cities => {
+    this.setState({ cities })
+  }
+
   render(){
     const { cities } = this.state
 
     return (
       <div className="App">
         <Route path="/" render={ routerProps => {
-          return <Header {...routerProps} />
+          return <Header {...routerProps} updateCities={this.updateCities}/>
         }} />
         <Route exact path="/" render={ routerProps => {
           return <CityList cities={cities} {...routerProps} />
         }} />
         <Route exact path="/search" render={ routerProps => {
-          return <CityList {...routerProps} />
+          return <CityList cities={cities} {...routerProps} />
         }} />
         <Route exact path="/show" render={ routerProps => {
           return <CityContainer {...routerProps} />
