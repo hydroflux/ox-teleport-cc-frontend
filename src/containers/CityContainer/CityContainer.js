@@ -1,4 +1,6 @@
 import { Component } from 'react'
+import { parseHTTPResponse } from '../../helpers/utilities'
+import DemographicsContainer from '../DemographicsContainer/DemographicsContainer'
 
 class CityContainer extends Component {
 
@@ -9,6 +11,7 @@ class CityContainer extends Component {
         longitude: "",
         name: "",
         population: "",
+        categories: []
     }
 
     componentDidMount(){
@@ -16,7 +19,6 @@ class CityContainer extends Component {
     }
 
     getCityDetails(){
-        console.log(this.props.location.state)
         this.setGeneralDetails()
         this.getUrbanAreaDetails()
     }
@@ -35,12 +37,19 @@ class CityContainer extends Component {
     }
 
     getUrbanAreaDetails(){
-        const { _links } = this.props.location.state.city_details
-        console.log(' urban area details ', _links)
+        const { href } = this.props.location.state.city_details._links["city:urban_area"]
+        const urbanAreaDetailsURL = `${href}scores`
+        fetch( urbanAreaDetailsURL )
+            .then( parseHTTPResponse )
+            .then( response => {
+                if (response.categories != null) {
+                    this.setState({ categories: response.categories })
+                }
+            })
     }
 
     render() {
-        const { full_name, population, latitude, longitude } = this.state
+        const { full_name, population, latitude, longitude, categories } = this.state
 
         return (
             <section className="city-container">
@@ -48,16 +57,10 @@ class CityContainer extends Component {
                 <h2>Population: {population}</h2>
                 <h3>Latitude: {latitude}</h3>
                 <h3>Longitude: {longitude}</h3>
+                <DemographicsContainer categories={categories} />
             </section>
         )
     }
 }
-
-// full_name: "",
-// geoname_id: "",
-// location: {},
-// name: "",
-// population: "",
-// links: {}
 
 export default CityContainer

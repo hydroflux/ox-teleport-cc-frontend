@@ -6,7 +6,6 @@ export default function CityListItem({ city, history }) {
     const name = city.matching_full_name
 
     const searchCityExact = () => {
-        console.log(link)
         fetch( link )
             .then( parseHTTPResponse )
             .then( city_details => {
