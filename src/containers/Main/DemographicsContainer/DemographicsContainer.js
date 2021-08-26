@@ -1,5 +1,5 @@
-import { Typography } from "@material-ui/core"
 import { Fragment } from "react"
+import { Typography } from "@material-ui/core"
 
 import DemographicCategory from "../../../components/DemographicCategory/DemographicCategory"
 

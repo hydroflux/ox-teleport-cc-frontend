@@ -5,6 +5,7 @@ import { getUrbanAreaDetails } from '../../../helpers/utilities'
 
 import LeftPane from './GridPanes/LeftPane'
 import RightPane from './GridPanes/RightPane'
+import UrbanAreaStatisticsBarChart from '../../../components/UrbanAreaStatisticsBarChart'
 
 import './CityContainer.css'
 
@@ -75,6 +76,7 @@ class CityContainer extends Component {
                         />
                     </Grid>
                 </Grid>
+                <UrbanAreaStatisticsBarChart categories={categories} styles={this.styles}/>
             </>
         )
     }
