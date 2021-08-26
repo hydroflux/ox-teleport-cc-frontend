@@ -1,7 +1,7 @@
 import { Component } from 'react'
 import SearchBar from 'material-ui-search-bar'
 
-import { searchCity } from '../../helpers/utilities'
+import { searchCity } from '../../../helpers/utilities'
 
 import './SearchContainer.css'
 

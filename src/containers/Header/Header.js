@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom'
 import TeleportLogo from '../../assets/images/teleport-logo.png'
 import { getSampleCities } from '../../helpers/utilities'
 
-import SearchContainer from '../SearchContainer/SearchContainer'
+import SearchContainer from './SearchContainer/SearchContainer'
 
 import './Header.css'
 

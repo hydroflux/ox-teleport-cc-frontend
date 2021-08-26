@@ -1,3 +1,6 @@
+import { Typography } from "@material-ui/core"
+import { Fragment } from "react"
+
 import DemographicCategory from "../../../components/DemographicCategory/DemographicCategory"
 
 export default function DemographicsContainer({ categories }) {
@@ -9,8 +12,13 @@ export default function DemographicsContainer({ categories }) {
     }
 
     return (
-        <section>
+        <Fragment>
+            <Typography
+                variant="subtitle1"
+                align="center"
+                display="block"
+            >Urban Area Statistics</Typography>
             { displayDemographicsCategories() }
-        </section>
+        </Fragment>
     )
 }
