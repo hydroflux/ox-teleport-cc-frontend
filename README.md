@@ -15,3 +15,7 @@ Our client wants a website that allows them to learn more about major U.S. citie
 
 <!-- August 26th Backlog Updates -->
 [] Consider updating styling from individual CSS files to inline styling (reasoning: material-ui components need inline styling to function properly; additionally, the styling isn't very heavy on the other components & containers & therefore wouldn't take up a lot of space & would reduce size of the file structure)
+[] Fix issue with city container title typography not center-align
+[] Create a center-aligned title element to sit at the top of 'Main' component--would fix the above issue as well
+[] Add a map which displays latitude longitude -- could work with a four-panel grid in the city-container
+[] Look into 'Fragment' component ( React level component ) to learn what's possible with Fragment properties

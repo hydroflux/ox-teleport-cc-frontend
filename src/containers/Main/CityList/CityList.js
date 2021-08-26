@@ -1,4 +1,6 @@
+import { Fragment } from 'react';
 import { List, Typography } from '@material-ui/core';
+
 import CityListItem from '../../../components/CityListItem/CityListItem';
 
 import './CityList.css'
@@ -26,18 +28,21 @@ export default function CityList({ cities, history, match }) {
     }
     
     return (
-        <>
-            { console.log(history)}
+        <Fragment>
+            {/* { console.log(history)} */}
             <Typography
                 className="city-list-header"
-                variant="h6"
+                variant="inherit"
                 align="center"
             >
                 { displayHeader() }
             </Typography>
-            <List className="city-list" component="nav">
+            <List
+                className="city-list"
+                component="ul"
+            >
                 { displayCities() }
             </List>
-        </>
+        </Fragment>
     )
 }

@@ -1,4 +1,5 @@
 import { ListItem } from "@material-ui/core"
+
 import { parseHTTPResponse } from "../../helpers/utilities"
 
 import './CityListItem.css'

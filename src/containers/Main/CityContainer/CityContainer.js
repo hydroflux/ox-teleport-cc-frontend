@@ -1,4 +1,4 @@
-import { Grid } from '@material-ui/core'
+import { Grid, Typography } from '@material-ui/core'
 import { Component } from 'react'
 
 import { getUrbanAreaDetails } from '../../../helpers/utilities'
@@ -52,8 +52,13 @@ class CityContainer extends Component {
         const { full_name, population, latitude, longitude, categories } = this.state
 
         return (
-            <section className="city-container">
-                <h1>{full_name}</h1>
+            <>
+                <Typography className="city-container-header"
+                    variant="inherit"
+                    align="center" // Doesn't appear to be working properly, using external CSS
+                >
+                    {full_name}
+                </Typography>
                 <Grid container>
                     <Grid item sm>
                         <LeftPane
@@ -70,7 +75,7 @@ class CityContainer extends Component {
                         />
                     </Grid>
                 </Grid>
-            </section>
+            </>
         )
     }
 }
