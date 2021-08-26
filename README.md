@@ -14,3 +14,4 @@ Our client wants a website that allows them to learn more about major U.S. citie
 [] Fix issue with sampleCities refreshing on refresh--query params stay the same but the sample cities are appearing--the search results should be maintained; Could this be fixed by removing ComponentDidMount & set the results based on the route?
 
 <!-- August 26th Backlog Updates -->
+[] Consider updating styling from individual CSS files to inline styling (reasoning: material-ui components need inline styling to function properly; additionally, the styling isn't very heavy on the other components & containers & therefore wouldn't take up a lot of space & would reduce size of the file structure)
