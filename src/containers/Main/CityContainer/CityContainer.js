@@ -1,5 +1,7 @@
 import { Component } from 'react'
-import { parseHTTPResponse } from '../../../helpers/utilities'
+
+import { getUrbanAreaDetails } from '../../../helpers/utilities'
+
 import DemographicsContainer from '../DemographicsContainer/DemographicsContainer'
 
 class CityContainer extends Component {
@@ -14,39 +16,29 @@ class CityContainer extends Component {
         categories: []
     }
 
-    componentDidMount(){
-        this.getCityDetails()
+    componentDidMount(){ this.setCityDetails() }
+
+    setCityDetails(){
+        const { city_details } = this.props.location.state
+        this.setGeneralDetails( city_details )
+        this.setUrbanAreaDetails( city_details )
     }
 
-    getCityDetails(){
-        this.setGeneralDetails()
-        this.getUrbanAreaDetails()
-    }
-
-    setGeneralDetails(){
-        const { full_name,
-                geoname_id,
-                location,
-                name,
-                population } = this.props.location.state.city_details
-        this.setState({ full_name, geoname_id, name, population })
-        this.setState({
+    setGeneralDetails = ( city_details ) => {
+        const { full_name, geoname_id, location, name, population } = city_details
+        this.setState({ 
+            full_name, geoname_id, name, population,
             latitude: location.latlon.latitude,
             longitude: location.latlon.longitude
         })
     }
 
-    getUrbanAreaDetails(){
-        const { href } = this.props.location.state.city_details._links["city:urban_area"]
-        const urbanAreaDetailsURL = `${href}scores`
-        fetch( urbanAreaDetailsURL )
-            .then( parseHTTPResponse )
-            .then( response => {
-                if (response.categories != null) {
-                    this.setState({ categories: response.categories })
-                }
-            })
+    setUrbanAreaDetails = ( city_details ) => {
+        getUrbanAreaDetails( city_details )
+            .then( this.updateCategories )
     }
+
+    updateCategories = categories => this.setState({ categories })
 
     render() {
         const { full_name, population, latitude, longitude, categories } = this.state

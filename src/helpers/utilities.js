@@ -1,5 +1,14 @@
 export const parseHTTPResponse = response => response.json()
 
+export const getSampleCities = () => {
+    return fetch('https://api.teleport.org/api/cities', {
+        headers: {
+          'Content-Type': 'application/json'
+        }})
+            .then( parseHTTPResponse )
+            .then( ({_embedded}) => _embedded["city:search-results"] )
+}
+
 export const searchCity = (searchTerm) => {
     let searchURL = 'https://api.teleport.org/api/cities/'
     searchURL = `${searchURL}?search=${searchTerm}`
@@ -13,11 +22,11 @@ export const searchCity = (searchTerm) => {
         .then( parseHTTPResponse )
 }
 
-export const getSampleCities = () => {
-    return fetch('https://api.teleport.org/api/cities', {
-        headers: {
-          'Content-Type': 'application/json'
-        }})
-            .then( parseHTTPResponse )
-            .then( ({_embedded}) => _embedded["city:search-results"] )
+export const getUrbanAreaDetails = city_details => {
+    const { href } = city_details._links["city:urban_area"]
+    const urbanAreaDetailsURL = `${href}scores`
+
+    return fetch( urbanAreaDetailsURL )
+        .then( parseHTTPResponse )
+        .then( ({  categories }) => categories )
 }

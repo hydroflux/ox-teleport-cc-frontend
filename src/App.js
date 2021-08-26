@@ -1,10 +1,10 @@
 import { Component } from 'react'
+import { Route } from 'react-router-dom';
+
 import { getSampleCities } from './helpers/utilities';
 
-import CityList from './containers/Main/CityList/CityList'
 import Header from './containers/Header/Header';
-import { Route } from 'react-router-dom';
-import CityContainer from './containers/Main/CityContainer/CityContainer';
+import Main from './containers/Main/Main';
 
 class App extends Component {
 
@@ -12,11 +12,7 @@ class App extends Component {
     cities: []
   }
 
-  componentDidMount(){ 
-    getSampleCities()
-      .then( this.updateCities )
-  }
-
+  componentDidMount(){ getSampleCities().then( this.updateCities ) }
   updateCities = cities => this.setState({ cities })
 
   render(){
@@ -27,15 +23,7 @@ class App extends Component {
         <Route path="/" render={ routerProps => {
           return <Header {...routerProps} updateCities={this.updateCities}/>
         }} />
-        <Route exact path="/" render={ routerProps => {
-          return <CityList cities={cities} {...routerProps} />
-        }} />
-        <Route exact path="/search" render={ routerProps => {
-          return <CityList cities={cities} {...routerProps} />
-        }} />
-        <Route exact path="/show" render={ routerProps => {
-          return <CityContainer {...routerProps} />
-        }} />
+        <Main cities={cities} />
       </div>
     );
   }
