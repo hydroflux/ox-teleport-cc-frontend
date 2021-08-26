@@ -1,5 +1,5 @@
 import { List, Typography } from '@material-ui/core';
-import CityListItem from '../../components/CityListItem/CityListItem';
+import CityListItem from '../../../components/CityListItem/CityListItem';
 
 import './CityList.css'
 

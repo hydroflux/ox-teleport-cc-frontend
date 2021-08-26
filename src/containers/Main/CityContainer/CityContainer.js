@@ -1,5 +1,5 @@
 import { Component } from 'react'
-import { parseHTTPResponse } from '../../helpers/utilities'
+import { parseHTTPResponse } from '../../../helpers/utilities'
 import DemographicsContainer from '../DemographicsContainer/DemographicsContainer'
 
 class CityContainer extends Component {

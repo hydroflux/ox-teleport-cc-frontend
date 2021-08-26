@@ -12,3 +12,5 @@ Our client wants a website that allows them to learn more about major U.S. citie
 <!-- August 25th Backlog Updates -->
 [] Update the splash page to be more engaging
 [] Fix issue with sampleCities refreshing on refresh--query params stay the same but the sample cities are appearing--the search results should be maintained; Could this be fixed by removing ComponentDidMount & set the results based on the route?
+
+<!-- August 26th Backlog Updates -->

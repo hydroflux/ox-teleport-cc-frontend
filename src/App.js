@@ -1,10 +1,10 @@
 import { Component } from 'react'
 import { getSampleCities } from './helpers/utilities';
 
-import CityList from './containers/CityList/CityList'
+import CityList from './containers/Main/CityList/CityList'
 import Header from './containers/Header/Header';
 import { Route } from 'react-router-dom';
-import CityContainer from './containers/CityContainer/CityContainer';
+import CityContainer from './containers/Main/CityContainer/CityContainer';
 
 class App extends Component {
 
@@ -13,7 +13,6 @@ class App extends Component {
   }
 
   componentDidMount(){ 
-    console.log("here")
     getSampleCities()
       .then( this.updateCities )
   }
