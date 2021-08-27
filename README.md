@@ -6,7 +6,6 @@ Our client wants a website that allows them to learn more about major U.S. citie
 [] Sample list isn't the best way to have a splash / home page--also wasted a lot of time during the CC--decide on a way to update
 [] Categories list should exist in their own table including the colors
 [] Look into the widgets available on the api again, possible to show on the CityContainer page
-[] If continuing to use material-ui, update the CityContainer page to use the 'Paper' component in order to split the page into left / right (right side for widget)
 [] Need to add conditionals for if the urban area details don't exist
 
 <!-- August 25th Backlog Updates -->
@@ -16,5 +15,7 @@ Our client wants a website that allows them to learn more about major U.S. citie
 <!-- August 26th Backlog Updates -->
 [] Consider updating styling from individual CSS files to inline styling (reasoning: material-ui components need inline styling to function properly; additionally, the styling isn't very heavy on the other components & containers & therefore wouldn't take up a lot of space & would reduce size of the file structure)
 [] Create a center-aligned title element to sit at the top of 'Main' component--would fix the above issue as well
-[] Add a map which displays latitude longitude -- could work with a four-panel grid in the city-container
 [] Look into 'Fragment' component ( React level component ) to learn what's possible with Fragment properties
+[] Change 'Paper' spacing on the 'CityContainer' page
+[] Update Typography on the 'CityContainer' component to make the fonts more engaging / better ui
+[] Add a hover zoom to the paper elements of the 'CityContainer'
