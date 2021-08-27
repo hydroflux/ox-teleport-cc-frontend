@@ -1,5 +1,6 @@
 import { Grid, Paper, Typography } from "@material-ui/core";
 import { Fragment } from "react";
+import LocationMap from "../../../../components/LocationMap";
 
 export default function LeftPane({ population, latitude, longitude, styles }) {
     return (
@@ -15,6 +16,7 @@ export default function LeftPane({ population, latitude, longitude, styles }) {
                     <Typography variant="subtitle2">Latitude: {latitude}</Typography>
                     <Typography variant="subtitle2">Longitude: {longitude}</Typography>
                 </Fragment>
+                <LocationMap latitude={latitude} longitude={longitude}/>
             </Paper>
         </Grid>
     )
