@@ -52,6 +52,24 @@ class CityContainer extends Component {
     render() {
         const { full_name, population, latitude, longitude, categories } = this.state
 
+        const displayUrbanAreaStatistics = () => (
+            this.state.categories.length > 0
+            ? (
+                <Grid item sm>
+                    <RightPane
+                        categories={categories}
+                        styles={this.styles}
+                    />
+                </Grid>
+            ) : null
+        )
+
+        const displayUrbanAreaStatisticsBarGraph = () => (
+                this.state.categories.length > 0
+                ? <UrbanAreaStatisticsBarChart categories={categories} styles={this.styles}/>
+                : null
+        )
+
         return (
             <>
                 <Typography className="city-container-header"
@@ -69,14 +87,9 @@ class CityContainer extends Component {
                             styles={this.styles}
                         />
                     </Grid>
-                    <Grid item sm>
-                        <RightPane
-                            categories={categories}
-                            styles={this.styles}
-                        />
-                    </Grid>
+                    { displayUrbanAreaStatistics() }
                 </Grid>
-                <UrbanAreaStatisticsBarChart categories={categories} styles={this.styles}/>
+                { displayUrbanAreaStatisticsBarGraph() }
             </>
         )
     }

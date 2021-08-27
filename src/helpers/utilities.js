@@ -23,10 +23,14 @@ export const searchCity = (searchTerm) => {
 }
 
 export const getUrbanAreaDetails = city_details => {
-    const { href } = city_details._links["city:urban_area"]
-    const urbanAreaDetailsURL = `${href}scores`
-
-    return fetch( urbanAreaDetailsURL )
-        .then( parseHTTPResponse )
-        .then( ({  categories }) => categories )
+    if ( city_details._links["city:urban_area"] ){
+        const { href } = city_details._links["city:urban_area"]
+        const urbanAreaDetailsURL = `${href}scores`
+    
+        return fetch( urbanAreaDetailsURL )
+            .then( parseHTTPResponse )
+            .then( ({  categories }) => categories )
+    } else {
+        return new Promise( () => [])
+    }
 }

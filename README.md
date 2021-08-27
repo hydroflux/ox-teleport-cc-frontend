@@ -19,3 +19,5 @@ Our client wants a website that allows them to learn more about major U.S. citie
 [] Change 'Paper' spacing on the 'CityContainer' page
 [] Update Typography on the 'CityContainer' component to make the fonts more engaging / better ui
 [] Add a hover zoom to the paper elements of the 'CityContainer'
+[] Come up with a better name for the app
+[] The title on the 'CityContainer' and the bar chart aren't aligned--add an additional structure element to line them back up

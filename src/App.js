@@ -12,7 +12,9 @@ class App extends Component {
     cities: []
   }
 
-  componentDidMount(){ getSampleCities().then( this.updateCities ) }
+  componentDidMount(){ 
+    console.log(this)
+    getSampleCities().then( this.updateCities ) }
   updateCities = cities => this.setState({ cities })
 
   render(){
