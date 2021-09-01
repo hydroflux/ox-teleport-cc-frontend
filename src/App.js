@@ -1,10 +1,9 @@
 import { Component } from 'react'
-import { Route } from 'react-router-dom';
+import { parseHTTPResponse } from './helpers/utilities';
 
-import { getSampleCities } from './helpers/utilities';
-
+import CityList from './containers/CityList/CityList'
 import Header from './containers/Header/Header';
-import Main from './containers/Main/Main';
+import { Route } from 'react-router-dom';
 
 class App extends Component {
 
@@ -12,9 +11,19 @@ class App extends Component {
     cities: []
   }
 
-  componentDidMount(){ 
-    getSampleCities().then( this.updateCities ) }
-  updateCities = cities => this.setState({ cities })
+  componentWillMount(){ this.getSampleCities() }
+
+  getSampleCities = () => {
+    fetch('https://api.teleport.org/api/cities', {
+      headers: {
+        'Content-Type': 'application/json'
+      }})
+      .then( parseHTTPResponse )
+      .then( ({_embedded}) => {
+        this.setState({
+          cities: _embedded["city:search-results"]
+      })})
+  }
 
   render(){
     const { cities } = this.state
@@ -22,9 +31,11 @@ class App extends Component {
     return (
       <div className="App">
         <Route path="/" render={ routerProps => {
-          return <Header {...routerProps} updateCities={this.updateCities}/>
+          return <Header {...routerProps} />
         }} />
-        <Main cities={cities} />
+        <Route exact path="/" render={ routerProps => {
+          return <CityList cities={cities} />
+        }} />
       </div>
     );
   }
