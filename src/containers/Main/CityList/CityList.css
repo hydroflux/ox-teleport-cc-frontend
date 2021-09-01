@@ -1,0 +1,12 @@
+.city-list-header {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    padding-top: 1rem;
+}
+
+.city-list {
+    display: flex;
+    flex-wrap: wrap;
+    padding-left: 2rem !important;
+}
