@@ -22,4 +22,3 @@ Our client wants a website that allows them to learn more about major U.S. citie
 [] Come up with a better name for the app
 [] The title on the 'CityContainer' and the bar chart aren't aligned--add an additional structure element to line them back up
 [] Push searched cities to the top of the city state in App
-[] Fix the merge issues between local & remote repo
