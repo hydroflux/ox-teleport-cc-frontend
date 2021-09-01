@@ -1,78 +1,24 @@
 # CHALLENGE
-Our client wants a website that allows them to learn more about major U.S. cities. Specifically, they wish to be able to submit the name of a city and learn its latitude and longitude, as well as quality of life scores for the area, where available. To save costs, we have decided to use Teleport’s free public API (https://developers.teleport.org/api/getting_started/) as our data source. 
 
-User Story #1 => As a user, I can view major us cities located at the teleport api endpoint
-User Story #2 => As a user, I can submit the name of a city and learn its latitude & longitude, as well as other metrics
-User Story #3 => As a user, I can view city metrics on an individual page
+Our client wants a website that allows them to learn more about major U.S. cities. Specifically, they wish to be able to submit the name of a city and learn its latitude and longitude, as well as quality of life scores for the area, where available. To save costs, we have decided to use Teleport’s free public API (<https://developers.teleport.org/api/getting_started/>) as our data source.
 
+<!-- August 24th Backlog Updates -->
+[] Sample list isn't the best way to have a splash / home page--also wasted a lot of time during the CC--decide on a way to update
+[] Categories list should exist in their own table including the colors
+[] Look into the widgets available on the api again, possible to show on the CityContainer page
+[] Need to add conditionals for if the urban area details don't exist
 
-<!-- # Getting Started with Create React App
+<!-- August 25th Backlog Updates -->
+[] Update the splash page to be more engaging
+[] Fix issue with sampleCities refreshing on refresh--query params stay the same but the sample cities are appearing--the search results should be maintained; Could this be fixed by removing ComponentDidMount & set the results based on the route?
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
-
-## Available Scripts
-
-In the project directory, you can run:
-
-### `npm start`
-
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
-
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
-
-### `npm test`
-
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
-
-### `npm run build`
-
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
-
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify) -->
+<!-- August 26th Backlog Updates -->
+[] Consider updating styling from individual CSS files to inline styling (reasoning: material-ui components need inline styling to function properly; additionally, the styling isn't very heavy on the other components & containers & therefore wouldn't take up a lot of space & would reduce size of the file structure)
+[] Create a center-aligned title element to sit at the top of 'Main' component--would fix the above issue as well
+[] Look into 'Fragment' component ( React level component ) to learn what's possible with Fragment properties
+[] Change 'Paper' spacing on the 'CityContainer' page
+[] Update Typography on the 'CityContainer' component to make the fonts more engaging / better ui
+[] Add a hover zoom to the paper elements of the 'CityContainer'
+[] Come up with a better name for the app
+[] The title on the 'CityContainer' and the bar chart aren't aligned--add an additional structure element to line them back up
+[] Push searched cities to the top of the city state in App
