@@ -21,3 +21,4 @@ Our client wants a website that allows them to learn more about major U.S. citie
 [] Add a hover zoom to the paper elements of the 'CityContainer'
 [] Come up with a better name for the app
 [] The title on the 'CityContainer' and the bar chart aren't aligned--add an additional structure element to line them back up
+[] Push searched cities to the top of the city state in App
